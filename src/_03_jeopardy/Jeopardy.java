@@ -62,7 +62,7 @@ public class Jeopardy implements ActionListener, MouseListener {
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-		firstButton.createButton();
+		firstButton=createButton("fifty dollar");
 		// 7. Add the firstButton to the quizPanel
 		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
@@ -70,7 +70,7 @@ public class Jeopardy implements ActionListener, MouseListener {
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton.createButton();
+		secondButton=createButton("hundred dollar");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
@@ -96,14 +96,14 @@ public class Jeopardy implements ActionListener, MouseListener {
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+		JButton button = new JButton();
 		// Set the text of the button to the dollarAmount
-
+		button.setText("dollarAmount");
 		// Increment the buttonCount (this should make the layout vertical)
-
+		buttonCount++;
 		// Return your new button instead of the temporary button
-
-		return new JButton("temporary button");
+		
+		return new JButton();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -113,9 +113,10 @@ public class Jeopardy implements ActionListener, MouseListener {
 
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
-
+		if (buttonPressed == (firstButton)){
 			// Call the askQuestion() method
- 
+			askQuestion("question","answer",score);
+		}
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 
 		// If the buttonPressed was the secondButton
@@ -131,24 +132,26 @@ public class Jeopardy implements ActionListener, MouseListener {
 		// Use the playJeopardyTheme() method to play music while the use thinks of an answer
 		
 		// Remove this temporary message and replace it with a pop-up that asks the user the question
-		JOptionPane.showMessageDialog(null, "this is where the question will be asked");
+		String answer = JOptionPane.showInputDialog(null, "What is my age?(In words not numbers)");
 		
 		// Stop the theme music when they have entered their response. Hint: use the sound variable 
 		
 		// If the answer is correct
-
+		if(answer.equalsIgnoreCase("thirteen")) {
 			// Increase the score by the prizeMoney
-
+			prizeMoney++;
 			// Pop up a message to tell the user they were correct
-
+			JOptionPane.showMessageDialog(null, "You are correct!");
+		}
 		// Otherwise
-
+		else {
 			// Decrement the score by the prizeMoney
-
+			prizeMoney--;
 			// Pop up a message to tell the user they were wrong and give them the correct answer
-
+			JOptionPane.showMessageDialog(null, "You are incorrect!, the answer was thirteen!");
+		}
 		// Call the updateScore() method
-
+		updateScore();
 	}
 
 	public void playJeopardyTheme() {
