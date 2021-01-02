@@ -103,7 +103,7 @@ public class Jeopardy implements ActionListener, MouseListener {
 		buttonCount++;
 		// Return your new button instead of the temporary button
 		
-		return new JButton();
+		return button;
 	}
 
 	public void actionPerformed(ActionEvent e) {
