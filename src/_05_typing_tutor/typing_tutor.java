@@ -17,17 +17,16 @@ public class typing_tutor implements KeyListener {
     JPanel panel = new JPanel();
     JLabel label = new JLabel();
 	char currentLetter;
-	public static void main(String[] args) {
-		
-		
+	
 		
 
-	}
+	
 	char generateRandomLetter() {
 	    Random r = new Random();
 	    return (char) (r.nextInt(26) + 'a');
 	}
 
+	
 	void setup(){
         currentLetter = generateRandomLetter();
         label.setText(currentLetter+"");
@@ -39,7 +38,7 @@ public class typing_tutor implements KeyListener {
         frame.setVisible(true);
         frame.pack();
         }
-		public static void main() {
+		public static void main(String[] args) {
 		typing_tutor tutor = new typing_tutor();
 		tutor.setup(); 
 		 }
