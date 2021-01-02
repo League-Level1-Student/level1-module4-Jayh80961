@@ -1,5 +1,6 @@
 package _05_typing_tutor;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Date;
@@ -36,7 +37,7 @@ public class typing_tutor implements KeyListener {
         panel.add(label);
         frame.add(panel);
         frame.setVisible(true);
-
+        frame.pack();
         }
 		public static void main() {
 		typing_tutor tutor = new typing_tutor();
@@ -59,7 +60,15 @@ public class typing_tutor implements KeyListener {
 		@Override
 		public void keyPressed(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
+			System.out.println(e.getKeyChar());
+			if(currentLetter == e.getKeyChar()){
+				System.out.println("Correct!");
+				panel.setBackground(Color.green);
+			}
+			else {
+				System.out.println("Wrong!");
+				panel.setBackground(Color.red);
+			}
 		}
 		@Override
 		public void keyReleased(KeyEvent e) {
