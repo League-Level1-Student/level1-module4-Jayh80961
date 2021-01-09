@@ -21,7 +21,7 @@ public class typing_tutor implements KeyListener {
 		
 
 	
-	public static char generateRandomLetter() {
+	public char generateRandomLetter() {
 	    Random r = new Random();
 	    return (char) (r.nextInt(26) + 'a');
 	}
@@ -72,7 +72,8 @@ public class typing_tutor implements KeyListener {
 		@Override
 		public void keyReleased(KeyEvent e) {
 			// TODO Auto-generated method stub
-			currentLetter = generateRandomLetter();
+			typing_tutor t = new typing_tutor();
+			currentLetter = t.generateRandomLetter();
 			label.setText(currentLetter+"");
 			
 		} 
