@@ -54,6 +54,10 @@ public class typing_tutor implements KeyListener {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void keyPressed(KeyEvent e) {
 			System.out.println("you typed " + e.getKeyChar());
 			// TODO Auto-generated method stub
 			if(currentLetter == e.getKeyChar()){
@@ -64,10 +68,6 @@ public class typing_tutor implements KeyListener {
 				System.out.println("Wrong!");
 				panel.setBackground(Color.red);
 			}
-		}
-		@Override
-		public void keyPressed(KeyEvent e) {
-		
 		}
 		@Override
 		public void keyReleased(KeyEvent e) {
