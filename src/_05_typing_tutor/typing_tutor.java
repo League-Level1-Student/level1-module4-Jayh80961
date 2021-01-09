@@ -16,12 +16,12 @@ public class typing_tutor implements KeyListener {
 	JFrame frame = new JFrame();
     JPanel panel = new JPanel();
     JLabel label = new JLabel();
-	char currentLetter;
+	static char currentLetter;
 	
 		
 
 	
-	char generateRandomLetter() {
+	public static char generateRandomLetter() {
 	    Random r = new Random();
 	    return (char) (r.nextInt(26) + 'a');
 	}
@@ -54,12 +54,8 @@ public class typing_tutor implements KeyListener {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			// TODO Auto-generated method stub
-			
-		}
-		@Override
-		public void keyPressed(KeyEvent e) {
+			System.out.println("you typed " + e.getKeyChar());
 			// TODO Auto-generated method stub
-			System.out.println(e.getKeyChar());
 			if(currentLetter == e.getKeyChar()){
 				System.out.println("Correct!");
 				panel.setBackground(Color.green);
@@ -68,6 +64,10 @@ public class typing_tutor implements KeyListener {
 				System.out.println("Wrong!");
 				panel.setBackground(Color.red);
 			}
+		}
+		@Override
+		public void keyPressed(KeyEvent e) {
+		
 		}
 		@Override
 		public void keyReleased(KeyEvent e) {
