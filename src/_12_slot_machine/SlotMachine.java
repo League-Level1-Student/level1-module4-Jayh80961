@@ -74,29 +74,38 @@ public class SlotMachine implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
+		panel.removeAll();
+		panel.add(button);
 		Random ran = new Random();
 		randnum1 = ran.nextInt(3);
 		randnum2 = ran.nextInt(3);
 		randnum3 = ran.nextInt(3);
 		if(randnum1 == 0) {
 		try {
+			
 			label1 = createLabelImage("orange.jpg");
+			panel.add(label1);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		}
-		else if(randnum1 == 1) {
+			if(randnum1 == 1) {
 			try {
+			
 				label2 = createLabelImage("cherry.jpg");
+				panel.add(label2);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			}
-		else if(randnum1 == 2) {
+			if(randnum1 == 2) {
 			try {
+				
 				label3 = createLabelImage("lime.jpg");
+				panel.add(label3);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -104,23 +113,29 @@ public class SlotMachine implements ActionListener{
 			}
 		if(randnum2 == 0) {
 			try {
+				
 				label1 = createLabelImage("orange.jpg");
+				panel.add(label1);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			}
-			else if(randnum2 == 1) {
+			if(randnum2 == 1) {
 				try {
+				
 					label2 = createLabelImage("cherry.jpg");
+					panel.add(label2);
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				}
-			else if(randnum2 == 2) {
+				if(randnum2 == 2) {
 				try {
+				
 					label3 = createLabelImage("lime.jpg");
+					panel.add(label3);
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -128,27 +143,39 @@ public class SlotMachine implements ActionListener{
 				}
 		if(randnum3 == 0) {
 			try {
+				
 				label1 = createLabelImage("orange.jpg");
+				panel.add(label1);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			}
-			else if(randnum3 == 1) {
+			if(randnum3 == 1) {
 				try {
+				
 					label2 = createLabelImage("cherry.jpg");
+					panel.add(label2);
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				}
-			else if(randnum3 == 2) {
+			if(randnum3 == 2) {
 				try {
+				
 					label3 = createLabelImage("lime.jpg");
+					panel.add(label3);
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				}
+				System.out.println(randnum1);
+				System.out.println(randnum2);
+				System.out.println(randnum3);
+				if(randnum1 == randnum2 && randnum1 == randnum3) {
+					JOptionPane.showMessageDialog(null, "You win the game!");
 				}
 		frame.pack();
 	}
