@@ -32,7 +32,7 @@ public class typing_tutor implements KeyListener {
         label.setText(currentLetter+"");
         label.setFont(label.getFont().deriveFont(28.0f));
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.addKeyListener(this);
+        frame.addKeyListener(this);
         panel.add(label);
         frame.add(panel);
         frame.setVisible(true);

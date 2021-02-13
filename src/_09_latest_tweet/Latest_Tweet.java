@@ -10,20 +10,22 @@ import javax.swing.JTextField;
 
 public class Latest_Tweet implements MouseListener {
 	static JTextField text = new JTextField(20);
-	public void main(String[] args) {
+	static JButton button = new JButton();
+	public static void main(String[] args) {
 		JFrame window = new JFrame();
 		JPanel panel = new JPanel();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JButton button = new JButton();
 		window.add(panel);
 		window.setTitle("The Amazing Tweet Retriever");
 		window.setVisible(true);
 		button.setText("Search the Twitterverse");
 		panel.add(text);
 		panel.add(button);
-		button.addMouseListener(this);
 		window.pack();
 	
+	}
+	public void run() {
+		button.addMouseListener(this);
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
